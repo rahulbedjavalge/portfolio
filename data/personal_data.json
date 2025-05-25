@@ -1,0 +1,116 @@
+{
+  "profile": {
+    "name": "RahulAI",
+    "title": "Full Stack Developer & AI Specialist",
+    "summary": "Experienced developer specializing in AI-powered web applications and modern web technologies. Currently exploring opportunities in Europe and actively learning German.",
+    "location": "India",
+    "availability": "Open to opportunities in Europe",
+    "contact": {
+      "email": "rahulbedjavalge@yahoo.com",
+      "linkedin": "https://www.linkedin.com/in/rahul-bedjavalge/",
+      "github": "https://github.com/rahulbedjavalge"
+    },
+    "languages": [
+      {"name": "English", "proficiency": "Professional"},
+      {"name": "Hindi", "proficiency": "Native"},
+      {"name": "Marathi", "proficiency": "Native"},
+      {"name": "German", "proficiency": "Learning", "details": "Currently pursuing A1 level"}
+    ],
+    "interests": [
+      "European Tech Ecosystem",
+      "Cross-cultural Development Teams",
+      "International Software Development"
+    ]
+  },
+  "projects": [
+    {
+      "title": "RahulAI Portfolio",
+      "description": "A personalized AI-powered portfolio website that showcases projects and skills through an interactive chat interface.",
+      "technologies": ["Next.js", "TypeScript", "TailwindCSS", "OpenRouter API", "Supabase"],
+      "highlights": [
+        "Interactive AI chat assistant with markdown support",
+        "Rate-limited API protection",
+        "Real-time code syntax highlighting",
+        "Responsive design with TailwindCSS"
+      ],
+      "github": "https://github.com/rahulbedjavalge/ai-portfolio",
+      "demo": "https://rahulai.vercel.app"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": [
+        {"name": "React/Next.js", "level": "Expert", "years": 4},
+        {"name": "TypeScript", "level": "Expert", "years": 3},
+        {"name": "TailwindCSS", "level": "Advanced", "years": 2}
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        {"name": "Node.js", "level": "Expert", "years": 5},
+        {"name": "Supabase", "level": "Advanced", "years": 2},
+        {"name": "API Integration", "level": "Expert", "years": 4}
+      ]
+    },
+    {
+      "category": "AI/ML",
+      "items": [
+        {"name": "LLM Integration", "level": "Expert", "years": 2},
+        {"name": "AI API Development", "level": "Advanced", "years": 3},
+        {"name": "Prompt Engineering", "level": "Expert", "years": 2}
+      ]
+    },
+    {
+      "category": "DevOps",
+      "items": [
+        {"name": "Docker", "level": "Advanced", "years": 3},
+        {"name": "CI/CD", "level": "Advanced", "years": 3},
+        {"name": "AWS", "level": "Advanced", "years": 4}
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Tech Innovators",
+      "role": "Senior Full Stack Developer",
+      "duration": "2023 - Present",
+      "location": "San Francisco, CA",
+      "description": "Leading development of AI-powered web applications and portfolio websites.",
+      "achievements": [
+        "Implemented AI chat interfaces for multiple client projects",
+        "Reduced development time by 40% through AI automation",
+        "Mentored junior developers in AI integration",
+        "Led team of 5 developers on major client projects"
+      ],
+      "technologies": ["React", "Node.js", "TypeScript", "AWS", "OpenAI"]
+    },
+    {
+      "company": "Digital Solutions Inc",
+      "role": "Full Stack Developer",
+      "duration": "2021 - 2023",
+      "location": "Remote",
+      "description": "Developed and maintained enterprise web applications.",
+      "achievements": [
+        "Implemented real-time collaboration features",
+        "Reduced page load time by 60%",
+        "Integrated multiple third-party APIs"
+      ],
+      "technologies": ["Vue.js", "Python", "PostgreSQL", "Docker"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Technology",
+      "degree": "Master of Computer Science",
+      "specialization": "Artificial Intelligence",
+      "duration": "2019 - 2021",
+      "achievements": [
+        "Published research paper on LLM applications",
+        "Graduate Teaching Assistant for AI courses",
+        "4.0 GPA"
+      ]
+    }
+  ]
+}
