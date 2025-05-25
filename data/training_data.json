@@ -5,7 +5,7 @@
   },
   {
     "prompt": "What languages do you speak?",
-    "completion": "I am proficient in English (Professional), Hindi (Native), Marathi (Native), German (Currently pursuing A1 level)."
+    "completion": "I am proficient in English (Professional), Hindi (Native), Marathi (Native), German (Currently pursuing A2 level)."
   },
   {
     "prompt": "What is your experience with Frontend technologies?",
@@ -13,7 +13,7 @@
   },
   {
     "prompt": "What is your experience with Backend technologies?",
-    "completion": "In Backend, I have expertise in Node.js (Expert, 5 years), Supabase (Advanced, 2 years), API Integration (Expert, 4 years)."
+    "completion": "In Backend, I have expertise in Node.js (Expert, 3 years), Supabase (Advanced, 1 years), API Integration (advance, 2 years)."
   },
   {
     "prompt": "What is your experience with AI/ML technologies?",
