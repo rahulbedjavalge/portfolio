@@ -72,3 +72,4 @@ supabase/migrations/
 # Optional
 *.tsbuildinfo
 *.swp
+.vercel

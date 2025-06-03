@@ -8,7 +8,7 @@ export default function Home() {
           Welcome to RahulAI
         </h1>
         <p className="text-center text-lg mb-8 text-gray-600">
-          Hello! I'm Rahul Bedjavalge's AI assistant. Feel free to ask me about his skills, projects, or interests.
+          Hello! I&apos;m Rahul Bedjavalge&apos;s AI assistant. Feel free to ask me about his skills, projects, or interests.
         </p>
         <ChatBox />
       </div>

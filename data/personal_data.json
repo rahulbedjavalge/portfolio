@@ -35,9 +35,44 @@
       ],
       "github": "https://github.com/rahulbedjavalge/ai-portfolio",
       "demo": "https://rahulai.vercel.app"
+    },
+    {
+      "title": "Animal Identification - Mice Classification",
+      "description": "Developed a machine learning model using YOLOv8 to distinguish between dotted and striped mice. Extracted and labeled image data from video, optimizing model performance through rigorous training.",
+      "technologies": ["YOLOv8", "Roboflow"],
+      "highlights": ["Achieved high accuracy, contributing valuable tools for biological research and wildlife monitoring"]
     }
   ],
   "skills": [
+    {
+      "category": "Programming Languages",
+      "items": [
+        {"name": "Python", "level": "Expert"},
+        {"name": "React", "level": "Advanced"},
+        {"name": "JavaScript", "level": "Advanced"}
+      ]
+    },
+    {
+      "category": "Machine Learning & AI",
+      "items": [
+        {"name": "TensorFlow", "level": "Advanced"},
+        {"name": "PyTorch", "level": "Advanced"},
+        {"name": "Keras", "level": "Advanced"},
+        {"name": "YOLO", "level": "Advanced"},
+        {"name": "Transformers", "level": "Intermediate"}
+      ]
+    },
+    {
+      "category": "Data Analysis & Tools",
+      "items": [
+        {"name": "MS-Excel", "level": "Advanced"},
+        {"name": "Pandas", "level": "Advanced"},
+        {"name": "NumPy", "level": "Advanced"},
+        {"name": "OpenCV", "level": "Advanced"},
+        {"name": "Roboflow", "level": "Advanced"},
+        {"name": "CVAT", "level": "Intermediate"}
+      ]
+    },
     {
       "category": "Frontend",
       "items": [
@@ -73,6 +108,26 @@
   ],
   "experience": [
     {
+      "company": "iMouse Solution",
+      "role": "Machine Learning Engineer (Intern)",
+      "duration": "Aug 2024 – Present",
+      "description": "Gathered and prepared visual data from movie clips, developed and trained custom object detection models using YOLO, and optimized model performance for accuracy and efficiency.",
+      "achievements": [
+        "Utilized Roboflow for data augmentation and model management",
+        "Improved model performance and efficiency"
+      ]
+    },
+    {
+      "company": "Infinite Variable Pvt Ltd",
+      "role": "Technology Specialist",
+      "duration": "Dec 2022 – June 2024",
+      "description": "Led cross-functional AI initiatives, conducted market research, and applied data analysis to enhance operations and make informed decisions.",
+      "achievements": [
+        "Excelled in B2C e-commerce by applying data analysis",
+        "Managed complex technical projects successfully"
+      ]
+    },
+    {
       "company": "Tech Innovators",
       "role": "Senior Full Stack Developer",
       "duration": "2023 - Present",
@@ -102,14 +157,117 @@
   ],
   "education": [
     {
-      "institution": "University of Technology",
-      "degree": "Master of Computer Science",
-      "specialization": "Artificial Intelligence",
-      "duration": "2019 - 2021",
-      "achievements": [
-        "Published research paper on LLM applications",
-        "Graduate Teaching Assistant for AI courses",
-        "4.0 GPA"
+      "institution": "IU International University of Applied Sciences",
+      "degree": "Master of Artificial Intelligence",
+      "duration": "Apr 2024 - Present",
+      "details": "Focused on developing advanced AI models and gaining practical experience through industry projects."
+    },
+    {
+      "institution": "Padmabhooshan Vasantdada Patil Institute of Technology (PVPIT)",
+      "degree": "Bachelors in Electronics and Telecommunications",
+      "duration": "July 2015 – Jun 2019",
+      "details": "Graduated with a CGPA of 7.8, with hands-on experience in electronics and telecommunications projects."
+    }
+  ],
+  "certifications": [
+    "Certificate in Data Analytics from NMD Pvt Ltd (Jan 2023 - Apr 2023)",
+    "Full Stack Development Certifications (Jul 2022 - Dec 2022)",
+    "Participation Certificate in Robocon 2017"
+  ],
+  "questions": [
+    {
+      "category": "Basic Personal Information",
+      "items": [
+        {"question": "What is your full name?", "answer": "Rahul bedjavalge"},
+        {"question": "Where were you born?", "answer": "latur india"},
+        {"question": "What is your birthdate?", "answer": "14/11/1997"},
+        {"question": "How old are you?", "answer": "this you can calculate depending on current date"},
+        {"question": "What is your nationality?", "answer": "indian"},
+        {"question": "Where do you currently live?", "answer": "berlin"},
+        {"question": "What is your hometown?", "answer": "pune"},
+        {"question": "Do you have any nicknames?", "answer": "Rahul"},
+        {"question": "What is your zodiac sign?", "answer": "libra"},
+        {"question": "What languages do you speak?", "answer": "english, marathi, hindi, german"},
+        {"question": "Are you married or single?", "answer": "i have girlfriend"},
+        {"question": "Do you have any children?", "answer": "no"},
+        {"question": "Do you have any siblings?", "answer": "yes"},
+        {"question": "What is your occupation?", "answer": "pursuing masters, vibe coder, ml ai enthusiast"},
+        {"question": "Where do you work?", "answer": "working as a part-time food delivery guy"}
+      ]
+    },
+    {
+      "category": "Education",
+      "items": [
+        {"question": "What is your highest level of education?", "answer": "Masters in Artificial Intelligence (In Progress)"},
+        {"question": "Which university are you attending for your master's degree?", "answer": "IU International University of Applied Sciences"},
+        {"question": "What was your major in undergraduate studies?", "answer": "Electronics and Telecommunications"},
+        {"question": "Which institute did you attend for your undergraduate degree?", "answer": "Padmabhooshan Vasantdada Patil Institute of Technology (PVPIT)"},
+        {"question": "What is your CGPA or GPA?", "answer": "7.8 (on a scale of 10)"},
+        {"question": "Have you received any academic scholarships?", "answer": "No"},
+        {"question": "What is your most significant academic achievement?", "answer": "Consistently high grades and successful completion of projects"},
+        {"question": "Did you participate in any academic clubs or organizations?", "answer": "Yes, I was part of the Robotics Club and the Coding Club."},
+        {"question": "Have you published any research papers?", "answer": "Not yet, but I am planning to start publishing my work."},
+        {"question": "What is your thesis or research project about?", "answer": "I am currently working on my thesis, which focuses on advanced AI model development."}
+      ]
+    },
+    {
+      "category": "Work Experience",
+      "items": [
+        {"question": "What is your current job title?", "answer": "Machine Learning Engineer (Intern)"},
+        {"question": "Where are you currently employed?", "answer": "iMouse Solution"},
+        {"question": "What was your previous job title?", "answer": "Technology Specialist"},
+        {"question": "Where did you work before your current job?", "answer": "Infinite Variable Pvt Ltd"},
+        {"question": "How many years of experience do you have in your field?", "answer": "2 years"},
+        {"question": "Have you ever led a team?", "answer": "Yes, I led a team of 5 developers on major client projects."},
+        {"question": "What is your most significant professional achievement?", "answer": "Implemented AI chat interfaces for multiple client projects, reducing development time by 40%."},
+        {"question": "Have you received any awards or recognitions at work?", "answer": "Participation Certificate in Robocon 2017."},
+        {"question": "What technologies have you worked with?", "answer": "React, Node.js, TypeScript, AWS, OpenAI, Vue.js, Python, PostgreSQL, Docker."},
+        {"question": "What is your notice period?", "answer": "1 month"}
+      ]
+    },
+    {
+      "category": "Skills and Endorsements",
+      "items": [
+        {"question": "What are your top technical skills?", "answer": "Python, React, TensorFlow, Node.js, AWS."},
+        {"question": "What is your level of proficiency in Python?", "answer": "Expert"},
+        {"question": "How many years have you been working with React?", "answer": "4 years"},
+        {"question": "What is your experience with TensorFlow?", "answer": "Advanced, worked on multiple AI/ML projects."},
+        {"question": "Are you familiar with cloud services like AWS?", "answer": "Yes, I have been using AWS for 4 years."},
+        {"question": "What is your experience with Docker?", "answer": "Advanced, used for containerization and deployment."},
+        {"question": "Have you worked with CI/CD pipelines?", "answer": "Yes, I have implemented CI/CD pipelines in my previous projects."},
+        {"question": "What programming languages are you proficient in?", "answer": "Python, JavaScript, TypeScript."},
+        {"question": "Do you have experience with database management?", "answer": "Yes, PostgreSQL, and MS-SQL."},
+        {"question": "What is your level of expertise in AI/ML technologies?", "answer": "Advanced, with hands-on experience in TensorFlow, PyTorch, and Keras."}
+      ]
+    },
+    {
+      "category": "Projects and Portfolio",
+      "items": [
+        {"question": "Can you describe your portfolio website?", "answer": "It's an AI-powered portfolio website showcasing my projects and skills."},
+        {"question": "What is the most challenging project you have worked on?", "answer": "The AI-powered portfolio website was challenging due to its interactive AI chat assistant."},
+        {"question": "Have you contributed to any open-source projects?", "answer": "Yes, I have contributed to several open-source projects on GitHub."},
+        {"question": "What is your role in your current project?", "answer": "I am the lead developer, responsible for the overall architecture and implementation."},
+        {"question": "How do you manage your projects?", "answer": "I use Agile methodologies, with a focus on iterative development and continuous feedback."},
+        {"question": "What tools do you use for project management?", "answer": "Jira, Trello, and Asana."},
+        {"question": "Can you provide a link to your GitHub profile?", "answer": "https://github.com/rahulbedjavalge"},
+        {"question": "What is your most popular project on GitHub?", "answer": "AI Portfolio Website, with over 100 stars."},
+        {"question": "Have you ever faced a significant challenge in a project? How did you overcome it?", "answer": "Yes, I faced challenges in optimizing the YOLO model for real-time performance. I overcame it by experimenting with different model architectures and hyperparameters."},
+        {"question": "What is your approach to learning new technologies?", "answer": "I follow a structured learning path, starting with the official documentation, followed by hands-on projects, and finally contributing to open-source."}
+      ]
+    },
+    {
+      "category": "Professional Development",
+      "items": [
+        {"question": "What is your approach to professional development?", "answer": "I believe in continuous learning and regularly update my skills through online courses and workshops."},
+        {"question": "Can you name some online platforms where you have completed courses?", "answer": "Coursera, Udemy, edX, and LinkedIn Learning."},
+        {"question": "What is your most significant learning from online courses?", "answer": "I have learned advanced AI/ML techniques, cloud computing, and full-stack development."},
+        {"question": "Have you attended any workshops or boot camps?", "answer": "Yes, I attended a Full Stack Development boot camp and an AI/ML workshop."},
+        {"question": "What is your experience with mentorship?", "answer": "I have mentored junior developers and interns in my previous roles."},
+        {"question": "How do you stay updated with industry trends?", "answer": "I follow industry leaders on social media, subscribe to relevant newsletters, and participate in online forums."},
+        {"question": "What is your long-term career goal?", "answer": "To become a leading expert in AI/ML and contribute to innovative projects that have a global impact."},
+        {"question": "Are you open to relocating for work?", "answer": "Yes, I am open to relocating to Europe for the right opportunity."},
+        {"question": "What is your expected salary range?", "answer": "Negotiable, depending on the role and location."},
+        {"question": "When can you start working?", "answer": "I can start immediately, as I am currently pursuing my master's degree part-time."}
       ]
     }
   ]
