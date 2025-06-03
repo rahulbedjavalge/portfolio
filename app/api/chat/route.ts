@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextRequest } from 'next/server'
+import { Readable } from 'stream'
 import { aiConfig } from '../../../lib/aiConfig'
 
 export async function POST(req: NextRequest) {
@@ -7,7 +8,7 @@ export async function POST(req: NextRequest) {
     const userMessage = body.message
 
     if (!userMessage) {
-      return NextResponse.json({ error: 'No message provided' }, { status: 400 })
+      return new Response('No message provided', { status: 400 })
     }
 
     const response = await fetch(aiConfig.api.url, {
@@ -25,21 +26,51 @@ export async function POST(req: NextRequest) {
         ],
         temperature: aiConfig.model.temperature,
         max_tokens: aiConfig.model.maxTokens,
+        stream: true,
       }),
     })
 
     if (!response.ok) {
       const errorText = await response.text()
-      console.error('OpenRouter API error:', errorText)
-      return NextResponse.json({ error: 'Failed to fetch AI response' }, { status: 500 })
+      return new Response(errorText, { status: response.status })
     }
 
-    const data = await response.json()
-    const assistantMessage = data.choices[0]?.message?.content || 'No response from AI'
+    const reader = response.body?.getReader()
+    const stream = new ReadableStream({
+      start(controller) {
+        async function push() {
+          if (!reader) {
+            controller.close()
+            return
+          }
+          const { done, value } = await reader.read()
+          if (done) {
+            controller.close()
+            return
+          }
 
-    return NextResponse.json({ reply: assistantMessage }) // ✅ Proper JSON response
+          const chunk = new TextDecoder().decode(value)
+          try {
+            const parsedChunk = JSON.parse(chunk)
+            const content = parsedChunk.choices[0]?.delta?.content
+            if (content) controller.enqueue(content)
+          } catch (error) {
+            console.error('Error parsing chunk:', error)
+          }
+          push()
+        }
+        push()
+      },
+    })
+
+    return new Response(stream, {
+      headers: {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        Connection: 'keep-alive',
+      },
+    })
   } catch (error) {
-    console.error('Error in /api/chat:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    return new Response(String(error), { status: 500 })
   }
 }

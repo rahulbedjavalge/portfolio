@@ -3,8 +3,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Bot, User, Sparkles, MessageCircle } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/atom-one-dark.css';
 
 interface Message {
   id: number;
@@ -17,13 +17,14 @@ const ChatBox = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Hi! I'm RahulAI, trained on Rahul Bedjavalge's portfolio data. Ask me anything about his skills, projects, or experience!",
+      text: "Hi! I'm RahulAI, trained on Rahul Bedjavalge&apos;s portfolio data. Ask me anything about his skills, projects, or experience!",
       isBot: true,
       timestamp: new Date()
     }
   ]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [botTyping, setBotTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -33,6 +34,42 @@ const ChatBox = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  const handleStreamResponse = async () => {
+    const response = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: inputMessage }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch response');
+    }
+
+    const reader = response.body?.getReader();
+    if (!reader) return;
+
+    let botMessage = '';
+    setBotTyping(true);
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+
+      const chunk = new TextDecoder().decode(value);
+      botMessage += chunk;
+      setMessages(prev => {
+        const lastMessage = prev[prev.length - 1];
+        if (lastMessage?.isBot) {
+          lastMessage.text = botMessage;
+          return [...prev.slice(0, -1), lastMessage];
+        }
+        return [...prev, { id: Date.now(), text: botMessage, isBot: true, timestamp: new Date() }];
+      });
+    }
+
+    setBotTyping(false);
+  };
 
   const handleSendMessage = async () => {
     if (!inputMessage.trim()) return;
@@ -48,28 +85,10 @@ const ChatBox = () => {
     setMessages(prev => [...prev, userMessage]);
     setInputMessage('');
     setIsLoading(true);
+    setBotTyping(true);
 
     try {
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: inputMessage }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to fetch response');
-      }
-
-      const data = await response.json();
-      
-      const aiResponse = {
-        id: Date.now() + 1,
-        text: data.reply,
-        isBot: true,
-        timestamp: new Date()
-      };
-      
-      setMessages(prev => [...prev, aiResponse]);
+      await handleStreamResponse();
     } catch (error) {
       console.error('Error:', error);
       const errorMessage = {
@@ -81,6 +100,7 @@ const ChatBox = () => {
       setMessages(prev => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
+      setBotTyping(false);
     }
   };
 
@@ -92,9 +112,9 @@ const ChatBox = () => {
   };
 
   const quickQuestions = [
-    "What are Rahul's skills?",
+    "What are Rahul&apos;s skills?",
     "Tell me about his projects",
-    "What's his experience?",
+    "What&apos;s his experience?",
     "Why Europe?",
     "Languages spoken?"
   ];
@@ -110,7 +130,7 @@ const ChatBox = () => {
             <Sparkles className="text-yellow-400 w-8 h-8" />
           </div>
           <p className="text-blue-200 text-lg">
-            Ask me anything about Rahul's skills, projects, or experience!
+            Ask me anything about Rahul&apos;s skills, projects, or experience!
           </p>
           <div className="flex items-center justify-center gap-2 mt-2">
             <MessageCircle className="text-green-400 w-5 h-5" />
@@ -145,19 +165,16 @@ const ChatBox = () => {
                   }`}>
                     <ReactMarkdown
                       components={{
-                        code({node, inline, className, children, ...props}) {
-                          const match = /language-(\w+)/.exec(className || '');
-                          return !inline && match ? (
-                            <SyntaxHighlighter
-                              language={match[1]}
-                              style={atomDark}
-                              PreTag="div"
-                              {...props}
-                            >
-                              {String(children).replace(/\n$/, '')}
-                            </SyntaxHighlighter>
+                        code({ inline, className, children, ...props }: React.HTMLAttributes<HTMLElement> & { inline?: boolean; className?: string; children?: React.ReactNode }) {
+                          const language = className ? className.replace('language-', '') : '';
+                          const highlightedCode = !inline && language ? hljs.highlight(children?.toString() || '', { language }).value : children?.toString() || '';
+
+                          return !inline ? (
+                            <pre {...props} className={`hljs ${className}`}>
+                              <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
+                            </pre>
                           ) : (
-                            <code className={className} {...props}>
+                            <code {...props} className={className}>
                               {children}
                             </code>
                           );
@@ -192,6 +209,24 @@ const ChatBox = () => {
               </div>
             )}
             
+            {/* Typing Indicator */}
+            {botTyping && (
+              <div className="flex justify-start">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
+                    <Bot className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="bg-white/90 rounded-2xl p-4">
+                    <div className="flex space-x-1">
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            
             <div ref={messagesEndRef} />
           </div>
 
@@ -203,7 +238,7 @@ const ChatBox = () => {
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Ask about Rahul's skills, projects, or experience..."
+                placeholder="Ask about Rahul&apos;s skills, projects, or experience..."
                 className="flex-1 bg-white/20 text-white placeholder-white/60 rounded-xl px-4 py-3 border border-white/30 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
                 disabled={isLoading}
               />
@@ -235,7 +270,7 @@ const ChatBox = () => {
         {/* Footer */}
         <div className="text-center mt-6">
           <p className="text-white/60 text-sm">
-            🎯 Powered by RahulAI - Your personal guide to Rahul's professional journey
+            🎯 Powered by RahulAI - Your personal guide to Rahul&apos;s professional journey
           </p>
         </div>
       </div>

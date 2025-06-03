@@ -1,14 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { Home, User, Mail, FileText, Github, Linkedin, Globe } from 'lucide-react';
+import { Home, User, Mail, FileText, Github, Linkedin } from 'lucide-react';
 
 const Sidebar = () => {
   const menuItems = [
     { title: 'Home', icon: <Home size={20} />, href: '/' },
     { title: 'About', icon: <User size={20} />, href: '/about' },
-    { title: 'Contact', icon: <Mail size={20} />, href: '/contact' },
-    { title: 'FAQ', icon: <FileText size={20} />, href: '/faq' },
+    { title: 'Contact', icon: <Mail size={20} />, href: '/contact-us' },
+    { title: 'FAQ', icon: <FileText size={20} />, href: '/faqs' },
   ];
 
   const socialLinks = [

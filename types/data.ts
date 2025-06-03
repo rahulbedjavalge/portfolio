@@ -49,4 +49,11 @@ export interface PersonalData {
     duration: string;
     achievements: string[];
   }[];
+  questions?: {
+    category: string;
+    items: {
+      question: string;
+      answer: string;
+    }[];
+  }[];
 }
