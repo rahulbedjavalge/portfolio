@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   keywords: ["Rahul Bedjavalge", "RahulAI", "AI Portfolio", "Full Stack Developer", "AI Specialist"]
 };
 
+export function generateViewport() {
+  return {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1
+  }
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -19,6 +27,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      </head>
       <body className={inter.className}>
         <div className="flex min-h-screen bg-gradient-to-br from-gray-900 to-black">
           <Sidebar />

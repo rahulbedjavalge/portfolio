@@ -1,0 +1,57 @@
+﻿Rahul Bedjavalge
+Machine Learning Intern | AI/ML Researcher 
+Warschauer Straße 58| Berlin, Germany
++49 155 6037 5039 | GitHub | Linkedin
+
+
+EDUCATION
+  
+
+IU INTERNATIONAL UNIVERSITY OF APPLIED SCIENCES                                       Berlin, Germany
+Master of Artificial Intelligence                                                                              Apr 2024 - Present
+* Focused on developing advanced AI models and gaining practical experience through industry projects.
+* Key coursework: Machine Learning, NLP, Deep learning,
+
+
+PROFESSIONAL EXPERIENCE
+   
+iMouse Solution                                                                                      Berlin, Germany
+Machine Learning  Engineer (Intern)                                                                   Aug 2024 – Present
+* Data Collection and Preprocessing: Gathering and preparing visual data from movie clips, trailers, or related sources.
+* Developed and trained custom object detection models using YOLO (You Only Look Once) architecture.
+* Analysis: Analyzing model results and optimizing performance for accuracy and efficiency.
+* Conducted literature reviews on current state-of-the-art methods in video object detection and annotation tools, and adapted best practices to our internal pipeline.
+* Utilized Roboflow for data augmentation, labeling, and model management to improve model performance and efficiency.
+* Conducting ongoing R&D on integrating real-time surveillance systems (ZoneMinder) with lightweight ML hooks for smart alerting currently experimenting with object class-based alert filters and latency reduction techniques.
+
+
+INFINITE VARIABLE PVT LTD                                                                              Pune, India
+Technology Specialist                                                                                   Dec 2022 – June 2024
+* Led cross-functional AI initiatives, partnering with academia to address client challenges.
+* Conducted thorough market research to understand industry trends, customer preferences, and competitive landscapes.
+*  Excelled in B2C e-commerce by applying data analysis to enhance operations and make informed decisions.
+* Demonstrated strong analytical skills in managing complex technical projects and ensuring successful execution of technology initiatives.
+
+
+CERTIFICATIONS AND PROJECTS 
+  
+
+ANIMAL IDENTIFICATION - MICE CLASSIFICATION
+Machine Learning Model                                                                                    July 2024
+* Developed a machine learning model using YOLOv8 to distinguish between dotted and striped mice. Extracted and labeled image data from video, optimizing model performance through rigorous training. Built a high-performance model using a Roboflow dataset generated from video frames.. Achieved high accuracy, contributing valuable tools for biological research and wildlife monitoring.
+CERTIFICATIONS
+* AWS Artificial Intelligence Practitioner Learning Plan (July 2025)
+* Certificate in Data Analytics from NMD Pvt Ltd (Jan 2023 - Apr 2023)
+* Full Stack Development Certifications (Jul 2022 - Dec 2022)
+* Participation Certificate in Robocon 2017
+
+
+SKILLS & PERSONAL
+  
+
+Programming Languages: Python , React, Javascript
+Machine Learning & AI: TensorFlow, PyTorch, Keras, YOLO, Transformers
+Data Analysis & Tools: MS-Excel, Pandas, NumPy, OpenCV, Roboflow, CVAT
+IT: Office Package (Word, Excel, PowerPoint, Access),  Jira, Google Workspace, aws
+Language: German (basic) , English (fluent), Hindi (Fluent) , Marathi(Native)
+Interests: Research and Innovation, Generative AI, Traveling , Exploring New Technologies

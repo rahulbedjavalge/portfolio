@@ -1,32 +1,47 @@
 {
   "profile": {
-    "name": "RahulAI",
-    "title": "Full Stack Developer & AI Specialist",
-    "summary": "Experienced developer specializing in AI-powered web applications and modern web technologies. Currently exploring opportunities in Europe and actively learning German.",
-    "location": "India",
-    "availability": "Open to opportunities in Europe",
+    "name": "Rahul Bedjavalge",
+    "title": "Machine Learning Engineer & AI/ML Researcher",
+    "summary": "AI/ML researcher and engineer currently pursuing Master's in Artificial Intelligence. Experienced in developing object detection models, data analysis, and technology initiatives. Based in Berlin, Germany, with a focus on machine learning, computer vision, and generative AI.",
+    "location": "Berlin, Germany",
+    "availability": "Currently studying and working in Berlin",
     "contact": {
-      "email": "rahulbedjavalge@yahoo.com",
+      "email": "rahulinberlinn@gmail.com",
+      "phone": "+49 155 6037 5039",
       "linkedin": "https://www.linkedin.com/in/rahul-bedjavalge/",
       "github": "https://github.com/rahulbedjavalge"
     },
     "languages": [
-      {"name": "English", "proficiency": "Professional"},
-      {"name": "Hindi", "proficiency": "Native"},
+      {"name": "English", "proficiency": "Fluent"},
+      {"name": "Hindi", "proficiency": "Fluent"},
       {"name": "Marathi", "proficiency": "Native"},
-      {"name": "German", "proficiency": "Learning", "details": "Currently pursuing A1 level"}
+      {"name": "German", "proficiency": "Basic"}
     ],
     "interests": [
-      "European Tech Ecosystem",
-      "Cross-cultural Development Teams",
-      "International Software Development"
+      "Research and Innovation",
+      "Generative AI",
+      "Traveling",
+      "Exploring New Technologies"
     ]
   },
   "projects": [
     {
+      "title": "Animal Identification - Mice Classification",
+      "description": "Machine learning model using YOLOv8 to distinguish between dotted and striped mice. Extracted and labeled image data from video, optimizing model performance through rigorous training.",
+      "technologies": ["YOLOv8", "Python", "Roboflow", "Computer Vision", "OpenCV"],
+      "highlights": [
+        "Built high-performance model using Roboflow dataset from video frames",
+        "Achieved high accuracy for biological research applications",
+        "Valuable tool for wildlife monitoring",
+        "Advanced data preprocessing and augmentation techniques"
+      ],
+      "github": "https://github.com/rahulbedjavalge",
+      "demo": "Available on request"
+    },
+    {
       "title": "RahulAI Portfolio",
       "description": "A personalized AI-powered portfolio website that showcases projects and skills through an interactive chat interface.",
-      "technologies": ["Next.js", "TypeScript", "TailwindCSS", "OpenRouter API", "Supabase"],
+      "technologies": ["Next.js", "TypeScript", "TailwindCSS", "OpenRouter API", "AI Integration"],
       "highlights": [
         "Interactive AI chat assistant with markdown support",
         "Rate-limited API protection",
@@ -39,78 +54,111 @@
   ],
   "skills": [
     {
-      "category": "Frontend",
+      "category": "Programming Languages",
       "items": [
-        {"name": "React/Next.js", "level": "Expert", "years": 4},
-        {"name": "TypeScript", "level": "Expert", "years": 3},
-        {"name": "TailwindCSS", "level": "Advanced", "years": 2}
+        {"name": "Python", "level": "Expert", "years": 3},
+        {"name": "React", "level": "Advanced", "years": 2},
+        {"name": "JavaScript", "level": "Advanced", "years": 2}
       ]
     },
     {
-      "category": "Backend",
+      "category": "Machine Learning & AI",
       "items": [
-        {"name": "Node.js", "level": "Expert", "years": 5},
-        {"name": "Supabase", "level": "Advanced", "years": 2},
-        {"name": "API Integration", "level": "Expert", "years": 4}
+        {"name": "TensorFlow", "level": "Advanced", "years": 2},
+        {"name": "PyTorch", "level": "Advanced", "years": 2},
+        {"name": "Keras", "level": "Advanced", "years": 2},
+        {"name": "YOLO", "level": "Expert", "years": 1},
+        {"name": "Transformers", "level": "Advanced", "years": 1}
       ]
     },
     {
-      "category": "AI/ML",
+      "category": "Data Analysis & Tools",
       "items": [
-        {"name": "LLM Integration", "level": "Expert", "years": 2},
-        {"name": "AI API Development", "level": "Advanced", "years": 3},
-        {"name": "Prompt Engineering", "level": "Expert", "years": 2}
+        {"name": "Pandas", "level": "Expert", "years": 2},
+        {"name": "NumPy", "level": "Expert", "years": 2},
+        {"name": "OpenCV", "level": "Advanced", "years": 1},
+        {"name": "Roboflow", "level": "Advanced", "years": 1},
+        {"name": "CVAT", "level": "Intermediate", "years": 1},
+        {"name": "MS Excel", "level": "Advanced", "years": 3}
       ]
     },
     {
-      "category": "DevOps",
+      "category": "Cloud & DevOps",
       "items": [
-        {"name": "Docker", "level": "Advanced", "years": 3},
-        {"name": "CI/CD", "level": "Advanced", "years": 3},
-        {"name": "AWS", "level": "Advanced", "years": 4}
+        {"name": "AWS", "level": "Advanced", "years": 1},
+        {"name": "Google Workspace", "level": "Expert", "years": 3},
+        {"name": "Jira", "level": "Advanced", "years": 2}
       ]
     }
   ],
   "experience": [
     {
-      "company": "Tech Innovators",
-      "role": "Senior Full Stack Developer",
-      "duration": "2023 - Present",
-      "location": "San Francisco, CA",
-      "description": "Leading development of AI-powered web applications and portfolio websites.",
+      "company": "iMouse Solution",
+      "role": "Machine Learning Engineer (Intern)",
+      "duration": "Aug 2024 – Present",
+      "location": "Berlin, Germany",
+      "description": "Developing object detection models and conducting R&D on real-time surveillance systems with AI integration.",
       "achievements": [
-        "Implemented AI chat interfaces for multiple client projects",
-        "Reduced development time by 40% through AI automation",
-        "Mentored junior developers in AI integration",
-        "Led team of 5 developers on major client projects"
+        "Developed and trained custom object detection models using YOLO architecture",
+        "Conducted data collection and preprocessing for visual data from movie clips and trailers",
+        "Optimized model performance for accuracy and efficiency through analysis",
+        "Conducted literature reviews on state-of-the-art video object detection methods",
+        "Utilized Roboflow for data augmentation, labeling, and model management",
+        "Ongoing R&D on integrating real-time surveillance systems (ZoneMinder) with ML hooks"
       ],
-      "technologies": ["React", "Node.js", "TypeScript", "AWS", "OpenAI"]
+      "technologies": ["YOLO", "Python", "Roboflow", "ZoneMinder", "Computer Vision", "OpenCV"]
     },
     {
-      "company": "Digital Solutions Inc",
-      "role": "Full Stack Developer",
-      "duration": "2021 - 2023",
-      "location": "Remote",
-      "description": "Developed and maintained enterprise web applications.",
+      "company": "Infinite Variable Pvt Ltd",
+      "role": "Technology Specialist",
+      "duration": "Dec 2022 – June 2024",
+      "location": "Pune, India",
+      "description": "Led cross-functional AI initiatives and technology projects, conducting market research and data analysis for B2C e-commerce operations.",
       "achievements": [
-        "Implemented real-time collaboration features",
-        "Reduced page load time by 60%",
-        "Integrated multiple third-party APIs"
+        "Led cross-functional AI initiatives, partnering with academia to address client challenges",
+        "Conducted thorough market research to understand industry trends and competitive landscapes",
+        "Excelled in B2C e-commerce by applying data analysis to enhance operations",
+        "Demonstrated strong analytical skills in managing complex technical projects",
+        "Ensured successful execution of technology initiatives"
       ],
-      "technologies": ["Vue.js", "Python", "PostgreSQL", "Docker"]
+      "technologies": ["Data Analysis", "Market Research", "E-commerce", "Project Management"]
     }
   ],
   "education": [
     {
-      "institution": "University of Technology",
-      "degree": "Master of Computer Science",
-      "specialization": "Artificial Intelligence",
-      "duration": "2019 - 2021",
+      "institution": "IU International University of Applied Sciences",
+      "degree": "Master of Artificial Intelligence",
+      "specialization": "Machine Learning, NLP, Deep Learning",
+      "duration": "Apr 2024 - Present",
+      "location": "Berlin, Germany",
       "achievements": [
-        "Published research paper on LLM applications",
-        "Graduate Teaching Assistant for AI courses",
-        "4.0 GPA"
+        "Focused on developing advanced AI models",
+        "Gaining practical experience through industry projects",
+        "Key coursework: Machine Learning, NLP, Deep learning"
       ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Artificial Intelligence Practitioner Learning Plan",
+      "date": "July 2025",
+      "issuer": "AWS"
+    },
+    {
+      "name": "Certificate in Data Analytics",
+      "date": "Jan 2023 - Apr 2023",
+      "issuer": "NMD Pvt Ltd"
+    },
+    {
+      "name": "Full Stack Development Certifications",
+      "date": "Jul 2022 - Dec 2022",
+      "issuer": "Professional Training"
+    },
+    {
+      "name": "Participation Certificate in Robocon 2017",
+      "date": "2017",
+      "issuer": "Robocon"
     }
   ]
 }
+
