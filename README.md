@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RahulAI Portfolio
 
-## Getting Started
+An AI-powered portfolio website showcasing Rahul Bedjavalge's professional journey as a Machine Learning Engineer and AI/ML Researcher based in Berlin, Germany.
 
-First, run the development server:
+🌐 **Live Site**: [https://www.rahulai.com/](https://www.rahulai.com/)
 
+## ✨ Features
+
+- **Interactive AI Assistant**: Chat with RahulAI to learn about Rahul's skills, projects, and experience
+- **Professional Portfolio**: Comprehensive showcase of ML engineering expertise
+- **Modern Design**: Responsive, mobile-first design with beautiful gradients and animations
+- **Real-time Chat**: Powered by OpenRouter API with multiple AI model fallbacks
+- **CV Download**: Direct download of professional CV
+- **Contact Information**: Easy access to professional contact details
+
+## 🚀 Tech Stack
+
+- **Framework**: Next.js 15.3.2 with App Router
+- **Language**: TypeScript
+- **Styling**: TailwindCSS with custom animations
+- **AI Integration**: OpenRouter API with multiple model support
+- **Deployment**: Vercel with custom domain
+- **Icons**: Lucide React
+- **Markdown**: React Markdown with syntax highlighting
+
+## 🏃‍♂️ Getting Started
+
+1. **Clone the repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/rahulbedjavalge/portfolio.git
+cd portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Set up environment variables**
+```bash
+cp .env.local.example .env.local
+# Add your OpenRouter API key to .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. **Run the development server**
+```bash
+npm run dev
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000) to see the application.
 
-To learn more about Next.js, take a look at the following resources:
+## 🔧 Configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Environment Variables
+- `OPENROUTER_API_KEY`: Your OpenRouter API key for AI functionality
+- `NEXT_PUBLIC_SITE_URL`: Your site URL (https://www.rahulai.com)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### AI Models
+The application uses multiple AI models with automatic fallback:
+- DeepSeek R1
+- Mistral Small
+- Moonshot AI Kimi
+- Meta Llama 3.1 (fallback)
 
-## Deploy on Vercel
+## 📁 Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+├── app/
+│   ├── api/          # API routes (chat, rate-limiting)
+│   ├── components/   # React components
+│   ├── about/        # About page
+│   ├── contact/      # Contact page
+│   └── globals.css   # Global styles
+├── data/             # Personal data and training data
+├── lib/              # Utility functions and configurations
+├── public/           # Static assets
+└── types/            # TypeScript type definitions
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🌟 Key Components
+
+- **ChatBox**: Interactive AI chat interface with question shuffling
+- **Sidebar**: Navigation with mobile responsiveness
+- **About Page**: Professional background and experience
+- **Contact Page**: Contact information and availability
+
+## 🚀 Deployment
+
+The site is deployed on Vercel with automatic deployments from the main branch.
+
+**Live URL**: [https://www.rahulai.com/](https://www.rahulai.com/)
+
+### Deploy Your Own
+
+1. Fork this repository
+2. Deploy to Vercel
+3. Add environment variables in Vercel dashboard
+4. Configure custom domain (optional)
+
+## 🤖 About RahulAI
+
+RahulAI is an intelligent assistant trained on Rahul Bedjavalge's professional data, including:
+- Machine Learning engineering experience at iMouse Solution
+- Master's degree in AI from IU International University
+- Computer vision and YOLO expertise
+- Technical skills in Python, TensorFlow, PyTorch
+- Project portfolio and certifications
+
+## 📱 Contact
+
+- **Email**: rahulbedjavalge@yahoo.com
+- **Phone**: +49 155 6037 5039
+- **LinkedIn**: [rahul-bedjavalge](https://www.linkedin.com/in/rahul-bedjavalge/)
+- **GitHub**: [rahulbedjavalge](https://github.com/rahulbedjavalge)
+- **Location**: Berlin, Germany
+
+## 📄 License
+
+This project is personal portfolio of Rahul Bedjavalge. All rights reserved.
