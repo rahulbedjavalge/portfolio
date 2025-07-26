@@ -14,7 +14,7 @@ export default function Contact() {
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h1>
             <p className="text-xl text-gray-600">
-              I'm always interested in discussing new opportunities, collaborations, and innovative projects in AI/ML.
+              I&apos;m always interested in discussing new opportunities, collaborations, and innovative projects in AI/ML.
             </p>
           </div>
 
@@ -100,7 +100,7 @@ export default function Contact() {
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 text-center">
                 <div className="space-y-3">
                   <p className="text-blue-800 text-lg flex items-center justify-center gap-2">
-                    🎓 <span className="font-semibold">Master's Student in AI at IU International University</span>
+                    🎓 <span className="font-semibold">Master&apos;s Student in AI at IU International University</span>
                   </p>
                   <p className="text-purple-800 text-lg flex items-center justify-center gap-2">
                     💼 <span className="font-semibold">ML Engineer Intern at iMouse Solution</span>
@@ -116,7 +116,7 @@ export default function Contact() {
           {/* Areas of Interest */}
           <div className="mt-12 pt-8 border-t border-gray-200">
             <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
-              I'm particularly interested in discussing:
+              I&apos;m particularly interested in discussing:
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">

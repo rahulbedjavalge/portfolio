@@ -47,7 +47,6 @@ export async function POST(req: NextRequest) {
     }
 
     let lastError: Error | null = null
-    let successfulModel = null
 
     // Try each model in sequence until one works
     for (const modelName of aiConfig.models) {
@@ -57,7 +56,6 @@ export async function POST(req: NextRequest) {
         const assistantMessage = data.choices?.[0]?.message?.content || 'No response from AI'
         
         console.log(`✅ Success with model: ${modelName}`)
-        successfulModel = modelName
         
         return NextResponse.json({ 
           reply: assistantMessage,

@@ -14,6 +14,22 @@ interface Message {
   model?: string; // Add model information
 }
 
+// Base questions that will be shuffled - moved outside component to prevent re-creation
+const baseQuestions = [
+  "What are Rahul's skills?",
+  "Tell me about his projects", 
+  "What's his experience?",
+  "Why Europe?",
+  "Languages spoken?",
+  "What's he working on now?",
+  "His educational background?",
+  "Machine learning expertise?",
+  "Computer vision projects?",
+  "YOLO experience?",
+  "Berlin experience?",
+  "Career goals?"
+];
+
 const ChatBox = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -28,22 +44,6 @@ const ChatBox = () => {
   const [quickQuestions, setQuickQuestions] = useState<string[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Base questions that will be shuffled
-  const baseQuestions = [
-    "What are Rahul's skills?",
-    "Tell me about his projects", 
-    "What's his experience?",
-    "Why Europe?",
-    "Languages spoken?",
-    "What's he working on now?",
-    "His educational background?",
-    "Machine learning expertise?",
-    "Computer vision projects?",
-    "YOLO experience?",
-    "Berlin experience?",
-    "Career goals?"
-  ];
-
   // Shuffle questions on component mount and when user clicks shuffle
   const shuffleQuestions = () => {
     const shuffled = [...baseQuestions].sort(() => Math.random() - 0.5);
@@ -52,7 +52,7 @@ const ChatBox = () => {
 
   useEffect(() => {
     shuffleQuestions(); // Initial shuffle on mount
-  }, []);
+  }, []); // Only run once on mount
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -124,7 +124,6 @@ const ChatBox = () => {
     setInputMessage(question);
     // Auto-send the question for better UX
     setTimeout(() => {
-      const syntheticEvent = { preventDefault: () => {} };
       handleSendMessage();
     }, 100);
   };
@@ -140,7 +139,7 @@ const ChatBox = () => {
             <Sparkles className="text-yellow-400 w-6 h-6 sm:w-8 sm:h-8" />
           </div>
           <p className="text-blue-200 text-sm sm:text-base lg:text-lg px-4">
-            Ask me anything about Rahul's skills, projects, or experience!
+            Ask me anything about Rahul&apos;s skills, projects, or experience!
           </p>
           <div className="flex items-center justify-center gap-2 mt-2">
             <MessageCircle className="text-green-400 w-4 h-4 sm:w-5 sm:h-5" />
@@ -176,7 +175,7 @@ const ChatBox = () => {
                     <div className="prose prose-sm sm:prose prose-invert max-w-none">
                       <ReactMarkdown
                         components={{
-                          code({node, className, children}) {
+                          code({ className, children}) {
                             const match = /language-(\w+)/.exec(className || '');
                             const isInline = !match;
                             return isInline ? (
@@ -186,7 +185,7 @@ const ChatBox = () => {
                             ) : (
                               <SyntaxHighlighter
                                 language={match[1]}
-                                style={atomDark as any}
+                                style={atomDark}
                                 PreTag="div"
                               >
                                 {String(children).replace(/\n$/, '')}
@@ -247,7 +246,7 @@ const ChatBox = () => {
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Ask about Rahul's skills, projects, or experience..."
+                placeholder="Ask about Rahul&apos;s skills, projects, or experience..."
                 className="flex-1 bg-white/20 text-white placeholder-white/60 rounded-xl px-3 py-2 sm:px-4 sm:py-3 border border-white/30 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent text-sm sm:text-base"
                 disabled={isLoading}
               />
@@ -293,7 +292,7 @@ const ChatBox = () => {
         {/* Footer */}
         <div className="text-center mt-4 sm:mt-6">
           <p className="text-white/60 text-xs sm:text-sm px-4">
-            🎯 Powered by RahulAI - Your personal guide to Rahul's professional journey
+            🎯 Powered by RahulAI - Your personal guide to Rahul&apos;s professional journey
           </p>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { aiConfig } from './aiConfig';
 import { PersonalData } from '../types/data';
 

@@ -1,11 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Optimization for production
-  experimental: {
-    optimizeCss: true,
-  },
-  
   // Performance optimizations
   compress: true,
   

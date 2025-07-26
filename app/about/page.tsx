@@ -34,7 +34,7 @@ export default function About() {
               <h2 className="text-3xl font-bold text-gray-900">Professional Summary</h2>
             </div>
             <p className="text-gray-700 leading-relaxed text-lg">
-              AI/ML researcher and engineer currently pursuing Master's in Artificial Intelligence at IU International University of Applied Sciences in Berlin. 
+              AI/ML researcher and engineer currently pursuing Master&apos;s in Artificial Intelligence at IU International University of Applied Sciences in Berlin. 
               Experienced in developing object detection models, data analysis, and technology initiatives with a focus on machine learning, computer vision, and generative AI.
             </p>
           </div>
@@ -50,7 +50,7 @@ export default function About() {
             <ul className="text-gray-700 space-y-3 text-lg">
               <li className="flex items-center gap-3">
                 <span className="text-2xl">🎓</span> 
-                <span>Master's in Artificial Intelligence (Apr 2024 - Present)</span>
+                <span>Master&apos;s in Artificial Intelligence (Apr 2024 - Present)</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-2xl">💼</span> 

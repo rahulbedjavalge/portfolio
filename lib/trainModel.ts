@@ -3,6 +3,7 @@ import * as path from 'path';
 import { aiConfig } from './aiConfig';
 import { preprocessData } from './preprocessData';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface TrainingExample {
   prompt: string;
   completion: string;
