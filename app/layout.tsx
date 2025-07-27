@@ -2,6 +2,8 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import Sidebar from './components/Sidebar';
 import type { Metadata } from 'next';
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -9,7 +11,12 @@ export const metadata: Metadata = {
   title: "RahulAI - Rahul Bedjavalge's AI Portfolio",
   description: 'AI-powered portfolio showcasing Rahul Bedjavalge\'s projects, skills, and expertise in Full Stack Development & AI',
   authors: [{ name: "Rahul Bedjavalge" }],
-  keywords: ["Rahul Bedjavalge", "RahulAI", "AI Portfolio", "Full Stack Developer", "AI Specialist"]
+  keywords: ["Rahul Bedjavalge", "RahulAI", "AI Portfolio", "Full Stack Developer", "AI Specialist"],
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
 };
 
 export function generateViewport() {
@@ -37,6 +44,8 @@ export default function RootLayout({
             {children}
           </main>
         </div>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

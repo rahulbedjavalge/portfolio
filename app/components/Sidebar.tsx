@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Home, User, Mail, FileText, Github, Linkedin, Menu, X, Download } from 'lucide-react';
+import { Home, User, Mail, Github, Linkedin, Menu, X, Download } from 'lucide-react';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +11,6 @@ const Sidebar = () => {
     { title: 'Home', icon: <Home size={20} />, href: '/' },
     { title: 'About', icon: <User size={20} />, href: '/about' },
     { title: 'Contact', icon: <Mail size={20} />, href: '/contact' },
-    { title: 'FAQ', icon: <FileText size={20} />, href: '/faq' },
   ];
 
   const socialLinks = [

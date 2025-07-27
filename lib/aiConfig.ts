@@ -1,13 +1,11 @@
 export const aiConfig = {
-  // Multiple free models with fallback
+  // Reordered models for faster responses - smaller models first
   models: [
-    'deepseek/deepseek-r1-0528:free',
-    'deepseek/deepseek-r1-0528-qwen3-8b:free', 
-    'mistralai/mistral-small-3.2-24b-instruct:free',
+    'mistralai/mistral-small-3.2-24b-instruct:free', // Fast and efficient
+    'deepseek/deepseek-r1-0528-qwen3-8b:free',      // Smaller DeepSeek model
+    'deepseek/deepseek-r1-0528:free',               // Primary model
     'moonshotai/kimi-dev-72b:free',
-    'tngtech/deepseek-r1t2-chimera:free',
-    'moonshotai/kimi-k2:free',
-    'meta-llama/llama-3.1-8b-instruct:free' // fallback model
+    'meta-llama/llama-3.1-8b-instruct:free'         // Fallback
   ],
   
   // Model configuration
@@ -33,12 +31,12 @@ export const aiConfig = {
 - Name: Rahul Bedjavalge
 - Title: Machine Learning Engineer & AI/ML Researcher
 - Location: Berlin, Germany
-- Contact: rahulbedjavalge@yahoo.com, +49 155 6037 5039
+- Contact: rahulinberlinn@gmail.com, +49 155 6037 5039 (phone only if asked)
 - Currently pursuing Master's in AI while working as ML Engineer Intern
 
 **CONTACT:**
-- Email: rahulbedjavalge@yahoo.com
-- Phone: +49 155 6037 5039
+- Email: rahulinberlinn@gmail.com  
+- Phone: +49 155 6037 5039 (only provide if specifically asked)
 - LinkedIn: https://www.linkedin.com/in/rahul-bedjavalge/
 - GitHub: https://github.com/rahulbedjavalge
 
@@ -49,7 +47,7 @@ export const aiConfig = {
 - German: Basic
 
 **CURRENT EXPERIENCE:**
-**iMouse Solution (Aug 2024 – Present)**
+**iMouse GmbH (https://imouse.info/) (Aug 2024 – Present)**
 - Role: Machine Learning Engineer (Intern)
 - Location: Berlin, Germany
 - Description: Developing object detection models and conducting R&D on real-time surveillance systems with AI integration

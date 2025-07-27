@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { Mail, Phone, MapPin, Calendar, Linkedin, Github } from 'lucide-react';
+import { Mail, MapPin, Calendar, Linkedin, Github } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Contact - Rahul Bedjavalge',
@@ -19,12 +19,12 @@ export default function Contact() {
           </div>
 
           {/* Centered Single Column Layout */}
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-2xl mx-auto">
             {/* Contact Information Card */}
             <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Contact Information</h2>
               
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="space-y-6 mb-8">
                 <div className="flex items-center space-x-4 p-4 bg-blue-50 rounded-xl">
                   <div className="bg-blue-100 p-3 rounded-lg">
                     <Mail className="h-6 w-6 text-blue-600" />
@@ -33,18 +33,6 @@ export default function Contact() {
                     <p className="font-semibold text-gray-900">Email</p>
                     <a href="mailto:rahulinberlinn@gmail.com" className="text-blue-600 hover:text-blue-800 text-lg">
                       rahulinberlinn@gmail.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-4 p-4 bg-green-50 rounded-xl">
-                  <div className="bg-green-100 p-3 rounded-lg">
-                    <Phone className="h-6 w-6 text-green-600" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">Phone</p>
-                    <a href="tel:+4915560375039" className="text-green-600 hover:text-green-800 text-lg">
-                      +49 155 6037 5039
                     </a>
                   </div>
                 </div>

@@ -7,7 +7,6 @@
     "availability": "Currently studying and working in Berlin",
     "contact": {
       "email": "rahulinberlinn@gmail.com",
-      "phone": "+49 155 6037 5039",
       "linkedin": "https://www.linkedin.com/in/rahul-bedjavalge/",
       "github": "https://github.com/rahulbedjavalge"
     },
@@ -93,7 +92,8 @@
   ],
   "experience": [
     {
-      "company": "iMouse Solution",
+      "company": "iMouse GmbH",
+      "companyUrl": "https://imouse.info/",
       "role": "Machine Learning Engineer (Intern)",
       "duration": "Aug 2024 – Present",
       "location": "Berlin, Germany",

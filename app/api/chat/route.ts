@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { aiConfig } from '../../../lib/aiConfig'
+import { chatAnalytics } from '../../../lib/analytics'
 
 // Function to try a specific model
 async function tryModel(modelName: string, userMessage: string) {
@@ -30,17 +31,40 @@ async function tryModel(modelName: string, userMessage: string) {
 }
 
 export async function POST(req: NextRequest) {
+  const startTime = Date.now()
+  let currentModel = 'unknown'
+  let messageLength = 0
+
   try {
     const body = await req.json()
     const userMessage = body.message
+    messageLength = userMessage?.length || 0
 
     if (!userMessage) {
+      const responseTime = Date.now() - startTime
+      chatAnalytics.trackChatInteraction({
+        model: 'none',
+        responseTime,
+        success: false,
+        messageLength: 0,
+        errorType: 'no_message'
+      })
+
       return NextResponse.json({ error: 'No message provided' }, { status: 400 })
     }
 
     // Check if API key is configured
     if (!process.env.OPENROUTER_API_KEY) {
       console.error('OPENROUTER_API_KEY is not configured')
+      const responseTime = Date.now() - startTime
+      chatAnalytics.trackChatInteraction({
+        model: 'none',
+        responseTime,
+        success: false,
+        messageLength,
+        errorType: 'no_api_key'
+      })
+
       return NextResponse.json({ 
         error: 'API key not configured. Please add your OpenRouter API key to .env.local' 
       }, { status: 500 })
@@ -50,16 +74,35 @@ export async function POST(req: NextRequest) {
 
     // Try each model in sequence until one works
     for (const modelName of aiConfig.models) {
+      currentModel = modelName
       try {
         console.log(`Trying model: ${modelName}`)
         const data = await tryModel(modelName, userMessage)
-        const assistantMessage = data.choices?.[0]?.message?.content || 'No response from AI'
+        let assistantMessage = data.choices?.[0]?.message?.content || 'No response from AI'
         
-        console.log(`✅ Success with model: ${modelName}`)
+        // Clean up response - remove thinking tags and model references
+        assistantMessage = assistantMessage
+          .replace(/<think>[\s\S]*?<\/think>/g, '') // Remove thinking blocks
+          .replace(/\[thinking\][\s\S]*?\[\/thinking\]/g, '') // Remove alternative thinking format
+          .replace(/^thinking:.*$/gm, '') // Remove thinking lines
+          .replace(/Model: .*/g, '') // Remove model references
+          .trim()
+
+        const responseTime = Date.now() - startTime
+        
+        // Track successful interaction
+        chatAnalytics.trackChatInteraction({
+          model: currentModel,
+          responseTime,
+          success: true,
+          messageLength
+        })
+
+        console.log(`✅ Success with model: ${modelName} (${responseTime}ms)`)
         
         return NextResponse.json({ 
           reply: assistantMessage,
-          model: modelName // Include which model was used
+          model: currentModel
         })
         
       } catch (error) {
@@ -71,6 +114,15 @@ export async function POST(req: NextRequest) {
     }
 
     // If all models failed
+    const responseTime = Date.now() - startTime
+    chatAnalytics.trackChatInteraction({
+      model: currentModel,
+      responseTime,
+      success: false,
+      messageLength,
+      errorType: 'all_models_failed'
+    })
+
     console.error('All models failed. Last error:', lastError?.message)
     
     if (lastError?.message.includes('401')) {
@@ -90,6 +142,15 @@ export async function POST(req: NextRequest) {
     }, { status: 503 })
 
   } catch (error) {
+    const responseTime = Date.now() - startTime
+    chatAnalytics.trackChatInteraction({
+      model: currentModel,
+      responseTime,
+      success: false,
+      messageLength,
+      errorType: error instanceof Error ? error.message : 'unknown_error'
+    })
+
     console.error('Error in /api/chat:', error)
     return NextResponse.json({ 
       error: 'Internal server error. Please try again.' 

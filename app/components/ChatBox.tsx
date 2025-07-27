@@ -5,6 +5,7 @@ import { Send, Bot, User, Sparkles, MessageCircle, Shuffle } from 'lucide-react'
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { chatAnalytics } from '@/lib/analytics';
 
 interface Message {
   id: number;
@@ -25,7 +26,6 @@ const baseQuestions = [
   "His educational background?",
   "Machine learning expertise?",
   "Computer vision projects?",
-  "YOLO experience?",
   "Berlin experience?",
   "Career goals?"
 ];
@@ -52,6 +52,7 @@ const ChatBox = () => {
 
   useEffect(() => {
     shuffleQuestions(); // Initial shuffle on mount
+    chatAnalytics.loadFromLocalStorage(); // Load analytics from localStorage
   }, []); // Only run once on mount
 
   const scrollToBottom = () => {
@@ -77,6 +78,9 @@ const ChatBox = () => {
     setInputMessage('');
     setIsLoading(true);
 
+    // Start tracking the interaction
+    const startTime = Date.now();
+
     try {
       const response = await fetch('/api/chat', {
         method: 'POST',
@@ -89,18 +93,42 @@ const ChatBox = () => {
       if (!response.ok) {
         throw new Error(data.error || 'Failed to fetch response');
       }
+
+      // Calculate response time
+      const responseTime = Date.now() - startTime;
+      
+      // Track the successful interaction
+      chatAnalytics.trackChatInteraction({
+        model: data.model || 'unknown',
+        responseTime,
+        success: true,
+        messageLength: inputMessage.length
+      });
       
       const aiResponse = {
         id: Date.now() + 1,
         text: data.reply,
         isBot: true,
-        timestamp: new Date(),
-        model: data.model // Include model information
+        timestamp: new Date()
+        // Removed model information
       };
       
       setMessages(prev => [...prev, aiResponse]);
     } catch (error) {
       console.error('Error:', error);
+      
+      // Calculate response time for failed request
+      const responseTime = Date.now() - startTime;
+      
+      // Track the failed interaction
+      chatAnalytics.trackChatInteraction({
+        model: 'unknown',
+        responseTime,
+        success: false,
+        messageLength: inputMessage.length,
+        errorType: error instanceof Error ? error.message : 'Unknown error'
+      });
+      
       const errorMessage = {
         id: Date.now() + 1,
         text: error instanceof Error ? error.message : "Sorry, I encountered an error. Please try again.",
@@ -206,11 +234,7 @@ const ChatBox = () => {
                     </div>
                     <p className={`text-xs mt-1 sm:mt-2 ${message.isBot ? 'text-gray-500' : 'text-blue-100'}`}>
                       {message.timestamp.toLocaleTimeString()}
-                      {message.model && message.isBot && (
-                        <span className="ml-2 opacity-60">
-                          via {message.model.split('/')[1]?.split(':')[0] || message.model}
-                        </span>
-                      )}
+                      {/* Removed model information display */}
                     </p>
                   </div>
                 </div>
