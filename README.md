@@ -109,11 +109,8 @@ RahulAI is an intelligent assistant trained on Rahul Bedjavalge's professional d
 ## 📱 Contact
 
 - **Email**: rahulbedjavalge@yahoo.com
-- **Phone**: +49 155 6037 5039
 - **LinkedIn**: [rahul-bedjavalge](https://www.linkedin.com/in/rahul-bedjavalge/)
 - **GitHub**: [rahulbedjavalge](https://github.com/rahulbedjavalge)
-- **Location**: Berlin, Germany
-
 ## 📄 License
 
 This project is personal portfolio of Rahul Bedjavalge. All rights reserved.
